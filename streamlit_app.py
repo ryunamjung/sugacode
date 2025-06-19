@@ -12,10 +12,9 @@ category_C = ['분만취약지', '서울특별시 및 광역시 구지역 소재
 
 
 st.markdown("""
-🏥 수가 필터링 시스템  
-
+<h1 style='font-size: 48px;'>🏥 수가 필터링 시스템</h1>
 <div style='text-align: right; font-size: 14px;'>🐣 Made by RYORYO</div>
-
+<hr>
 ---
 
 **주의사항**  
