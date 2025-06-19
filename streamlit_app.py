@@ -12,8 +12,8 @@ category_C = ['분만취약지', '서울특별시 및 광역시 구지역 소재
 
 st.markdown("""
 # 🏥 수가 필터링 시스템  
-#### 🐣 Made by RYORYO
-""")
+<div style='text-align: right; font-size: 16px;'>🐣 <b>Made by RYORYO</b></div>
+""", unsafe_allow_html=True)
 
 uploaded_file = st.file_uploader("1️⃣ 엑셀 파일을 업로드해주세요", type=['xlsx'])
 
