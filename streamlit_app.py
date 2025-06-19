@@ -15,7 +15,6 @@ st.markdown("""
 <h1 style='font-size: 48px;'>🏥 수가 필터링 시스템</h1>
 <div style='text-align: right; font-size: 14px;'>🐣 Made by RYORYO</div>
 <hr>
----
 
 **주의사항**  
 이 시스템은 심평원의 EDI코드를 병원에 맞게 필터링하기 위한 도구입니다.  
