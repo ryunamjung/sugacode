@@ -104,6 +104,9 @@ if uploaded_file:
         final_result = df[mask].drop_duplicates(subset=['EDI코드', '명칭', '산정명칭'])
 
         st.subheader("📋 최종 필터링 결과")
+
+        # ✅ 결과 요약 표시 추가
+        st.success(f"총 {len(final_result):,}건이 조회되었습니다.")
         st.dataframe(final_result[['EDI코드', '명칭', '산정명칭'] + (['특이사항'] if '특이사항' in final_result.columns else [])], use_container_width=True)
 
         st.download_button(
