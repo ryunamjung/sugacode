@@ -10,7 +10,9 @@ category_B = ['소아전문응급의료센터', '권역외상센터', '권역응
 category_C = ['분만취약지', '서울특별시 및 광역시 구지역 소재 요양기관', 
               '서울특별시 및 광역시 구지역 소재 요양기관이 아닌 경우', '의료취약지역']
 
-st.title("\U0001F3E5 수가 필터링 시스템")
+st.title("🏥 수가 필터링 시스템")
+st.markdown("<div style='text-align: right; font-size: 14px;'>✨ <b>Made by RYORYO</b></div>", unsafe_allow_html=True)
+
 
 uploaded_file = st.file_uploader("1️⃣ 엑셀 파일을 업로드해주세요", type=['xlsx'])
 
