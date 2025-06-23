@@ -32,7 +32,7 @@ def load_data(file):
 
 def to_excel(df):
     output = BytesIO()
-    with pd.ExcelWriter(output, engine='xlsxwriter') as writer:
+    with pd.ExcelWriter(output, engine='openpyxl') as writer:  # 엔진 변경
         df.to_excel(writer, index=False, sheet_name='결과')
     return output.getvalue()
 
@@ -63,7 +63,6 @@ if uploaded_file:
     testroom_values = sorted(set(val for col in ['검사실1', '검사실2', '검사실3'] if col in df.columns for val in df[col].dropna().unique()))
     selected_testroom_exclude = st.multiselect("제외할 검사실 선택", testroom_values)
 
-    # 버튼 클릭 시 필터 적용
     if st.button("🔍 최종조회"):
         mask = pd.Series(True, index=df.index)
 
@@ -104,14 +103,15 @@ if uploaded_file:
 
         final_result = df[mask].drop_duplicates(subset=['EDI코드', '명칭', '산정명칭'])
 
-        st.subheader("\ud83d\udccb 최종 필터링 결과")
+        st.subheader("📋 최종 필터링 결과")
         st.dataframe(final_result[['EDI코드', '명칭', '산정명칭'] + (['특이사항'] if '특이사항' in final_result.columns else [])], use_container_width=True)
 
         st.download_button(
-            label="\ud83d\udcc5 필터링 결과 다운로드",
+            label="📅 필터링 결과 다운로드",
             data=to_excel(final_result),
             file_name='병원필터링결과.xlsx',
             mime='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
         )
+
 
 
